@@ -1,4 +1,0 @@
-docker build -t server_jdk8 .
-docker tag server_jdk8 172.16.1.202:5000/server_jdk8
-docker push 172.16.1.202:5000/server_jdk8
-docker pull 172.16.1.202:5000/server_jdk8
