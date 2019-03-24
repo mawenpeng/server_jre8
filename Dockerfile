@@ -7,4 +7,4 @@ RUN cd /tmp && \
     ln -s /srv/jdk1.8* /srv/jdk && \
     ln -s /srv/jdk/bin/* /usr/local/bin
     
-ENV JAVA_HOME=/srv/jdk
+ENV JAVA_HOME /srv/jdk
