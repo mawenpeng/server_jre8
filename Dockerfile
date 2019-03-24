@@ -6,3 +6,5 @@ RUN cd /tmp && \
     rm -f server-jre-8u202-linux-x64.tar.gz && \
     ln -s /srv/jdk1.8* /srv/jdk && \
     ln -s /srv/jdk/bin/* /usr/local/bin
+    
+ENV JAVA_HOME=/srv/jdk
