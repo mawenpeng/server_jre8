@@ -1,9 +1,10 @@
-FROM centos:centos7
+FROM ubuntu
 # Install Oracle Server JRE 8u212
+ENV filename server-jre-8u212-linux-x64.tar.gz
+COPY $filename /tmp
 RUN cd /tmp && \
-    curl -L -O -H "Cookie: oraclelicense=accept-securebackup-cookie" -k "https://download.oracle.com/otn/java/jdk/8u212-b10/59066701cf1a433da9770636fbc4c9aa/server-jre-8u212-linux-x64.tar.gz" && \
-    tar xf server-jre-8u202-linux-x64.tar.gz -C /srv/ && \
-    rm -f server-jre-8u202-linux-x64.tar.gz && \
+    tar xf $filename -C /srv/ && \
+    rm -f $filename && \
     ln -s /srv/jdk1.8* /srv/jdk && \
     ln -s /srv/jdk/bin/* /usr/local/bin
     
