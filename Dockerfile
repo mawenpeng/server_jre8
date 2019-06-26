@@ -1,11 +1,12 @@
 FROM ubuntu
 # Install Oracle Server JRE 8u212
-# ENV filename server-jre-8u212-linux-x64.tar.gz
-COPY server-jre-8u212-linux-x64.tar.gz /tmp
+ARG filename=server-jre-8u212-linux-x64.tar.gz
+COPY $filename /tmp
 RUN ls -l /tmp
 RUN cd /tmp && \
-    tar zxf server-jre-8u212-linux-x64.tar.gz -C /srv/ && \
-    rm -f server-jre-8u212-linux-x64.tar.gz && \
+    wget https://media.githubusercontent.com/media/mawenpeng/server_jre8/8u212-b10-jdk-down/server-jre-8u212-linux-x64.tar.gz \
+    tar xf $filename -C /srv/ && \
+    rm -f $filename && \
     ln -s /srv/jdk1.8* /srv/jdk && \
     ln -s /srv/jdk/bin/* /usr/local/bin
     
