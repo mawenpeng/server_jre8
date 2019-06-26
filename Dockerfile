@@ -3,7 +3,7 @@ FROM ubuntu
 ENV filename server-jre-8u212-linux-x64.tar.gz
 COPY $filename /tmp
 RUN cd /tmp && \
-    tar xf $filename -C /srv/ && \
+    tar zxf $filename -C /srv/ && \
     rm -f $filename && \
     ln -s /srv/jdk1.8* /srv/jdk && \
     ln -s /srv/jdk/bin/* /usr/local/bin
